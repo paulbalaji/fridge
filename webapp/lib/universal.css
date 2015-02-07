@@ -6,7 +6,11 @@
     font-family: lintel, arial;    
 }
 
+ul {
+    
+
 #list ul li {
     background-color: orange;
-    padding:20px;
+    padding:15px;
+    margin-bottom:20px;
 }
