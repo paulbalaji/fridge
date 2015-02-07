@@ -20,8 +20,8 @@ def playSound(url):
 
 while 1:
     char = getch.getch()
-
-    if(char == 43):
+    print("char is " + char)
+    if(char == '+'):
         songs.append(songs[0])
         playSound(songs[0])
         songs.pop(0)
