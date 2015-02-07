@@ -14,7 +14,7 @@ if($itemID == "-1") {
     $deleteRow = "DELETE FROM lists WHERE pID=$pID AND itemID=$itemID";    
 }
 
-mysql_query($deleteRow) or die(mysql_error());
+#mysql_query($deleteRow) or die(mysql_error());
 
 #$stmt->execute();
 

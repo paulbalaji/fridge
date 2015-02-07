@@ -22,7 +22,7 @@
 
         <div data-role="header">
 
-            <h1>Fridge App</h1>
+            <h1>Settings</h1>
             <div data-role="navbar">
                 <ul>
                     <li><a href="index.php">Home</a>
@@ -34,23 +34,12 @@
                 </ul>
             </div>
         </div>
-
+	
+        
         <div data-role="main" class="ui-content">
-           <form method="post" id="addCustomForm" action="addCustomItem.php" >
-           <table>
-           <tr>
-           <td>
-           <input type="hidden" value="<?php echo $pID; ?>" name="pID" />
-           <input type="text" name = "customItemName" /></td>
-           <td><a href="javascript:document.getElementById('addCustomForm').submit();" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
-           </tr>
-           </table>
-           </form>
-           
+            <p>Settings</p>
             <div id="list">
-            	<ul data-role="listview">
-                <?php include( "getList.php"); ?>
-                </ul>
+                
             </div>
         </div>
 
