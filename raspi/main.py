@@ -16,7 +16,7 @@ songs = ["http://192.168.5.122/fridge/webapp/song.mp3"]
 
 
 def playSound(url):
-     subprocess.call(["omxplayer", url]) 
+     subprocess.call(["aplay", url]) 
 
 while 1:
     char = getch.getch()
