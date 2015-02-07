@@ -18,8 +18,14 @@ include("includes/meta.php");
       $(function() {
           
          
-          
-         
+          function doPoll(){
+        $.get('getList.php', function(data) {
+        $("#list").html(data);
+        
+        setTimeout(doPoll,<?php echo $pollFrequency; ?>);
+    });
+}           doPoll();
+      
          $("#list ul li").on("swiperight",function(){
             var listElem = $(this);
  $(this).hide();
@@ -59,7 +65,7 @@ include("includes/meta.php");
     <p>The List</p>
       <div id="list">
           <?php
-                include("getList.php");
+                #include("getList.php");
             ?>
           <ul>
           
