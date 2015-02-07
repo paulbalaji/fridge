@@ -1,0 +1,11 @@
+#sql queries
+
+#get itemID, given a pID
+select itemID
+from lists
+where pID=GIVEN_pID;
+
+#get itemName, given itemID
+select itemName
+from items
+where itemID=GIVEN_itemID;
