@@ -6,8 +6,13 @@ include("includes/meta.php");
 
 $pID = $_GET["pID"];
 $itemID = $_GET["itemID"];
+$itemString = $_GET["customItemName"];
 
-$deleteRow = "DELETE FROM lists WHERE pID=$pID AND itemID=$itemID";
+if($itemID < 1) {
+    $deleteRow = "DELETE FROM lists WHERE pID=$pID AND customItemName=$itemString";
+} else {
+    $deleteRow = "DELETE FROM lists WHERE pID=$pID AND itemID=$itemID";    
+}
 
 mysql_query($deleteRow) or die(mysql_error());
 
