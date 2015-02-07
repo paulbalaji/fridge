@@ -23,6 +23,8 @@ ul{
 }
 
 #list ul li {
+	padding:15px;
+	background-color:orange;
  	text-shadow:none;
 	
 }

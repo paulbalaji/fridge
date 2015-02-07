@@ -29,27 +29,31 @@
                     </li>
                     <li><a href="settings.php">Settings</a>
                     </li>
-                    <li><a href="changepID.php">Enter PI ID</a>
+                    <!--<li><a href="changepID.php">Enter PI ID</a>
+                    </li> !-->
+                    
+                    <li>
+                    	<a href="repopulate.php">Repopulate</a>
                     </li>
                 </ul>
             </div>
         </div>
 
         <div data-role="main" class="ui-content">
-           <form method="post" id="addCustomForm" action="addCustomItem.php" >
+          
            <table>
            <tr>
            <td>
-           <input type="hidden" value="<?php echo $pID; ?>" name="pID" />
-           <input type="text" name = "customItemName" /></td>
-           <td><a href="javascript:document.getElementById('addCustomForm').submit();" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
+           <input type="hidden" id="pID" value="<?php echo $pID; ?>"  />
+           <input type="text" id = "customItemName" /></td>
+           <td><a href="#" id="addCustomButton" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
            </tr>
            </table>
-           </form>
+         
            
             <div id="list">
             	
-                <?php include( "getList.php"); ?>
+                <?php #include( "getList.php"); ?>
                
             </div>
         </div>

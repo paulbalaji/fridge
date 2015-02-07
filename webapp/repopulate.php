@@ -6,4 +6,6 @@ for ($i = 1 ; $i <= 9 ; $i++) {
     mysql_query($query) or die(mysql_error());
 }
 
+Header("Location: " + index.php);
+
 ?>
