@@ -1,4 +1,5 @@
 <?php
+include("includes/meta.php");
 
 $pID = $_GET["pID"];
 $itemID = $_GET["itemID"];

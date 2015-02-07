@@ -1,8 +1,12 @@
 @font-face {
     font-family: lintel;
-    src: url(sansation_light.woff);
+    src: url(media/lintel.otf);
 }
 * {
-    font-family: lintel;   
-    
+    font-family: lintel, arial;    
+}
+
+#list ul li {
+    background-color: orange;
+    padding:20px;
 }

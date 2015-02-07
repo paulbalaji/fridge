@@ -14,11 +14,24 @@ include("includes/meta.php");
     
     <link rel = "stylesheet" type="text/css" href="lib/universal.css" />    
     
-
     <script type="text/javascript">
       $(function() {
+          
+         
+          
+         
          $("#list ul li").on("swiperight",function(){
-  $(this).hide();
+            var listElem = $(this);
+ $(this).hide();
+             
+               $.get( "deleteListItem.php?pID=<?php echo $pID; ?>&itemID=" + $(this).attr('id'), function( data ) {
+  alert("Load done...");
+                   listElem.hide();
+                 
+});
+            
+                
+             
     });
  
           
@@ -27,11 +40,12 @@ include("includes/meta.php");
     
 </head>
 <body>
-
+<?php #echo $pID; ?>
 <div data-role="page">
+   
   <div data-role="header">
       
-      <h1> Fridge App</h1>
+      <h1>Fridge App</h1>
   <div data-role="navbar">
     <ul>
       <li><a href="index.php">Home</a></li>
@@ -45,7 +59,7 @@ include("includes/meta.php");
     <p>The List</p>
       <div id="list">
           <?php
-                #include("getList.php");
+                include("getList.php");
             ?>
           <ul>
           
@@ -56,7 +70,7 @@ include("includes/meta.php");
   </div>
 
   <div data-role="footer">
-    <h1>Settings</h1>
+    <h1>End of Page</h1>
   </div>
 </div> 
 
