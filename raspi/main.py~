@@ -4,20 +4,21 @@ import curses
 import getch
 import os
 import subprocess
-
+import snack
 
 dbase = db.DB()
 dbase.connect()
 bindings = dbase.getBindings()
 names = dbase.getNames()
 dbase.close()
-
+s = Sound()
+s.read('click.wav')
 
 while 1:
     char = getch.getch()
     try:
         parser = inParser.InputParser(char, bindings)
-        
+        s.play()
         itemId = parser.getValue()
 
         dbase = db.DB()
