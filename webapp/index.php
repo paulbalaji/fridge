@@ -36,13 +36,20 @@
         </div>
 
         <div data-role="main" class="ui-content">
-            <p>The List</p>
+           <form method="post" id="addCustomForm" action="addCustomItem.php" >
+           <table>
+           <tr>
+           <td>
+           <input type="hidden" value="<?php echo $pID; ?>" name="pID" />
+           <input type="text" name = "customItemName" /></td>
+           <td><a href="javascript:document.getElementById('addCustomForm').submit();" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
+           </tr>
+           </table>
+           </form>
+           
             <div id="list">
-                <?php #include( "getList.php"); ?>
-                <ul>
-
-
-
+            	<ul data-role="listview">
+                <?php include( "getList.php"); ?>
                 </ul>
             </div>
         </div>

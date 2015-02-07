@@ -1,4 +1,3 @@
-<ul>
 
 <?php
 #connect to MySQL
@@ -9,7 +8,7 @@ include("includes/meta.php");
 #$safeID = $pID;
 #stmt->execute();
 
-$query = "SELECT itemID FROM lists WHERE pID=$pID";
+$query = "SELECT * FROM lists WHERE pID=$pID";
 $result = mysql_query($query) or die(mysql_error());
 
 while($row = mysql_fetch_array($result)){
@@ -17,16 +16,22 @@ while($row = mysql_fetch_array($result)){
     #$stmt2->bindParam(1, $result2, PDO::PARAM_STR, $itemID);
     $itemID = $row['itemID'];
     #stmt2->execute();
-    
-    $subQuery = "SELECT * from items WHERE itemID=$itemID"; 
+	
+	  $subQuery = "SELECT * from items WHERE itemID=$itemID"; 
     $result2 = mysql_query($subQuery) or die(mysql_error());
     
-    $subResult = mysql_fetch_array($result2);
+    $row2 = mysql_fetch_array($result2);
+	
+	if($itemID == "-1") {
+		
+
+    $itemName = $row['customItemName'];	
+  
+	}else {
+		  $itemName = $row2['itemName'];
+	}
     
-    $itemName = $subResult['itemName'];
-    
-    echo "<li id = '$itemID'>#$itemID : $itemName</li>";
+    echo "<li id = '$itemID'>$itemName</li>";
 }
 ?>
     
-</ul>
