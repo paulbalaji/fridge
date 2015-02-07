@@ -41,12 +41,13 @@ class DB:
            self.dbConn.rollback()
            raise
     
-    def addToList(self,id):
+    def addToList(self,itemId):
         piId = self.piId()
-        sql = "INSERT INTO `fridge`.`lists`(pID, itemID) VALUES (%d, %d)" % (piId, id)
+        sql = "INSERT INTO `fridge`.`lists`(pID, itemID) VALUES (%d, %d)" % (piId, itemId)
+
         data = self.executeQuery(sql)
-        
-        
+
+                
     def getVersion(self):
         # prepare a cursor object using cursor() method
         cursor = self.dbConn.cursor()
@@ -55,6 +56,25 @@ class DB:
         # Fetch a single row using fetchone() method.
         data = cursor.fetchone()
         print "Database version : %s " % data
+    
+    def checkPresence(self, itemId):
+        piId = self.piId()
+        sql = "SELECT * FROM `fridge`.`lists` WHERE pID = '%d' AND itemID = '%d'" % (piId, itemId)
+        data = self.executeQuery(sql)
+        if len(data) == 0:
+            return False
+        return True
+    
+    def getNames(self):
+        sql = """ SELECT `fridge`.`mappings`.`itemID`, `fridge`.`items`.`itemName` 
+        FROM `fridge`.`mappings` INNER JOIN `fridge`.`items` ON
+        `fridge`.`mappings`.`itemID` = `fridge`.`items`.`itemID` 
+        WHERE `fridge`.`mappings`.`pID` = '%d'""" % self.piId()
+        data = self.executeQuery(sql)
+        result = {}
+        for row in data:
+            result[row[0]] = row[1]
+        return result
 
     def getBindings(self):
         piId = self.piId()
@@ -62,14 +82,14 @@ class DB:
         data = self.executeQuery(sql)
         result = {}
         for row in data:
-            result[row[2]] = row[1]
+            result[row[1]] = row[2]
         return result
         
         
 if __name__ == "__main__":
     db = DB()
     db.connect()
-    db.getBindings()
+    db.getNames()
     db.close()
 
             
