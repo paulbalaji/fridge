@@ -9,3 +9,10 @@ where pID=GIVEN_pID;
 select itemName
 from items
 where itemID=GIVEN_itemID;
+
+for $row:
+    $row[itemID]
+    row2 = query itemID
+    for $row2:
+        itemName = query itemID
+        echo itemName
