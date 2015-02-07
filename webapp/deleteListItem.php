@@ -8,7 +8,7 @@ $pID = $_GET["pID"];
 $itemID = $_GET["itemID"];
 $itemString = $_GET["customItemName"];
 
-if($itemID < 1) {
+if($itemID == "-1") {
     $deleteRow = "DELETE FROM lists WHERE pID=$pID AND customItemName=$itemString";
 } else {
     $deleteRow = "DELETE FROM lists WHERE pID=$pID AND itemID=$itemID";    
