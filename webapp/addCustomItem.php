@@ -8,10 +8,10 @@ $customItemName = $_POST['customItemName'];
 
 $query = "SELECT * FROM lists WHERE customItemName = '$customItemName'";
 $result = mysql_query($query) or die(mysql_error());
-echo (sizeof(mysql_fetch_array($result)))  ;
 $present = false;
 
 while($row = mysql_fetch_array($result)) {
+	echo "hi";
 	$present = true;	
 }
 if(!$present) {

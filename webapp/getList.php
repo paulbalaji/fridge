@@ -1,4 +1,4 @@
-
+<ul id="ULElem" data-role="listview">
 <?php
 #connect to MySQL
 include("includes/meta.php");
@@ -35,3 +35,4 @@ while($row = mysql_fetch_array($result)){
 }
 ?>
     
+    </ul>

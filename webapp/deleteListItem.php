@@ -9,12 +9,12 @@ $itemID = $_GET["itemID"];
 $itemString = $_GET["customItemName"];
 
 if($itemID == "-1") {
-    $deleteRow = "DELETE FROM lists WHERE pID=$pID AND customItemName=$itemString";
+    $deleteRow = "DELETE FROM lists WHERE pID=$pID AND customItemName='$itemString'";
 } else {
     $deleteRow = "DELETE FROM lists WHERE pID=$pID AND itemID=$itemID";    
 }
 
-#mysql_query($deleteRow) or die(mysql_error());
+mysql_query($deleteRow) or die(mysql_error());
 
 #$stmt->execute();
 

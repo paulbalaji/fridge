@@ -48,9 +48,9 @@
            </form>
            
             <div id="list">
-            	<ul data-role="listview">
+            	
                 <?php include( "getList.php"); ?>
-                </ul>
+               
             </div>
         </div>
 

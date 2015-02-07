@@ -1,16 +1,6 @@
- function doPoll(){
-        $.get('getList.php', function(data) {
-        $("#list").html(data);
-        
-        setTimeout(doPoll,500);
-    });
-}      
-	$(function() {
-          
-         
-              //doPoll();
-      
-         $("#list ul li").on("swiperight",function(){
+
+function init() {
+$("#list ul li").on("swiperight",function(){
             var listElem = $(this);
 			
 			listElem.animate({
@@ -22,16 +12,33 @@
     // Animation complete.
   });
 
-             
-               $.get( "deleteListItem.php?pID=1&itemID=" + $(this).attr('id'), function( data ) {
- 
-                   
-                 
-});
+             var itemID = $(this).attr('id')
+			 if (itemID == "-1") {
+				 	 $.get( "deleteListItem.php?pID=1&itemID=" + $(this).attr('id')+"&customItemName=" + $(this).html(), function( data ) {});
+			 } else {
+				 $.get( "deleteListItem.php?pID=1&itemID=" + $(this).attr('id'), function( data ) {});
+			 }
+         
             
                 
              
-    });
+});
+}
+
+	$(document).on('pageinit', function() {
+          
+      
+
+              
+      
+         	init();
  
           
+		  setInterval(function(){
+			$.get('getList.php', function(data) {
+        $("#list").html(data);
+		init();
+});
+		}, 500);
+		  
       });
