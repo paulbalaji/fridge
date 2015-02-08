@@ -22,13 +22,15 @@ global player
 print("Running...")
 
 def stopCommand():
+    global player
     #pygame.mixer.music.stop();
     print("stop attempted...")
     player.stdin.write("q")
 
 def playSound(url):
+    global player
     #subprocess.call(["mpg123", url])
-    player = subprocess.Popen(["omxplayer","song.mp3"], stdin = subprocess.PIPE, stdout.subprocess.PIPE,stderr = subprocess.PIPE)
+    player = subprocess.Popen(["omxplayer","song.mp3"], stdin = subprocess.PIPE, stdout = subprocess.PIPE,stderr = subprocess.PIPE)
     print("Playing sound..." + url)
     #pygame.mixer.music.load(url)
     #pygame.mixer.music.play(0)
@@ -46,7 +48,7 @@ while 1:
     if(char == '+'):
          playCommand()
         
-    elif(char == '-'):
+    elif(char == 'r'):
         stopCommand()
     else:
         try:
