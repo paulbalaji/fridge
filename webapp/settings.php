@@ -38,7 +38,7 @@
         
         <div data-role="main" class="ui-content">
             <p>Current Email</p>
-            <input type="text" id="email" value="<?php echo $emailID; ?>"  />
+            <input type="text" id="email" value="<?php echo $emailID; ?>" placeholder="Email Address" />
             
             <p>Set Email to send list to</p>
             <table>
