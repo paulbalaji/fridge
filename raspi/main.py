@@ -6,7 +6,7 @@ import os
 import subprocess
 import pygame
 
-pygame.init()
+pygame.mixer.init()
 dbase = db.DB()
 dbase.connect()
 bindings = dbase.getBindings()
