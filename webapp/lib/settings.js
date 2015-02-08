@@ -1,5 +1,6 @@
 function addHandlers() {
-	$("#updateEmailButton").on( "click", function(){
+	$("#updateEmailButton").click(  function(){
+	
 		$.get("updateEmail.php?pID=1&email="+$("email").val(),function(d){});
 		});
 		
