@@ -38,8 +38,8 @@
         
         <div data-role="main" class="ui-content">
             <p>Current Email</p>
-            <input type="hidden" id="email" value="<?php echo $emailID; ?>"  />
-            <p>"<?php echo $emailID; ?>"</p>
+            <input type="text" id="email" value="<?php echo $emailID; ?>"  />
+            <p><?php echo $emailID; ?></p>
             
             <p>Set Email to send list to</p>
             <table>
