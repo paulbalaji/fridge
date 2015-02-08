@@ -38,16 +38,14 @@
         
         <div data-role="main" class="ui-content">
             <p>Set Email to send list to</p>
-            <tr>
-            <td>
-            <div data-role="fieldcontain" class="ui-hide-label">
-	          <label for="username">Username:</label>
-          	<input type="text" name="username" id="username" value="" placeholder="Email Address"/>
-          	</td>
-            <td><a href="#" id="addCustomButton" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
-            </tr>
-        	</div>
-        </div>
+            <table>
+           <tr>
+           <td>
+           <input type="hidden" id="pID" value="<?php echo $pID; ?>"  />
+           <input type="text" id = "customItemName" /></td>
+           <td><a href="#" id="addCustomButton" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
+           </tr>
+           </table>
 
         <div data-role="footer">
             <h1>End of Page</h1>
