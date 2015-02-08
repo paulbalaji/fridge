@@ -1,4 +1,4 @@
-<?php include( "includes/addEmail.php"); ?>
+<?php include( "addEmail.php"); ?>
 <!DOCTYPE html>
 <html>
 
