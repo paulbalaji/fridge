@@ -38,6 +38,11 @@
         
         <div data-role="main" class="ui-content">
             <p>Settings</p>
+            <div data-role="fieldcontain" class="ui-hide-label">
+	          <label for="username">Username:</label>
+          	<input type="text" name="username" id="username" value="" placeholder="Username"/>
+            </div>
+
             <div id="list">
                 
             </div>
