@@ -6,7 +6,8 @@ import os
 import subprocess
 import pygame
 
-pygame.mixer.init()
+pygame.mixer.pre_init(44100, -16, 2, 2048) # setup mixer to avoid sound lag
+pygame.init() 
 dbase = db.DB()
 dbase.connect()
 bindings = dbase.getBindings()
@@ -34,6 +35,7 @@ while 1:
         #songs.append(songs[0])
         #playSound(songs[0])
         #songs.pop(0)
+        print("Song kinda playing...")
         effect = pygame.mixer.Sound('song.mp3')
         effect.play()
 
