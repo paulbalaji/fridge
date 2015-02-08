@@ -1,9 +1,9 @@
 var updateEmailClick = function() {
 
 		$.get("updateEmail.php?pID=1&email="+$("emailF").val(),function(d){});
-		});
+		
 }
-function addHandlers() {u
+function addHandlers() {
 	$(document).on( "click", "#updateEmailButton", updateEmailClick );
 		
 }
