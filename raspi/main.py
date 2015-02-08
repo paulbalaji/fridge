@@ -63,4 +63,5 @@ while 1:
             dbase.close()
             subprocess.call('echo '+text+'|festival --tts', shell=True)
         except:
+            raise
             print "Press correct button you shithead"
