@@ -6,8 +6,7 @@ import os
 import subprocess
 import pygame
 
-pygame.mixer.init() # setup mixer to avoid sound lag
-pygame.init() 
+
 dbase = db.DB()
 dbase.connect()
 bindings = dbase.getBindings()
@@ -20,7 +19,7 @@ songs = ["song.mp3"]
 print("Running...")
 
 def stopCommand():
-    pygame.mixer.music.stop();
+    #pygame.mixer.music.stop();
 
 def playSound(url):
     #subprocess.call(["mpg123", url])
