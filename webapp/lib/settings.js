@@ -4,14 +4,14 @@ var updateEmailClick = function() {
 		
 }
 function addHandlers() {
-	$(document).on( "click", "#updateEmailButton", updateEmailClick );
+	$(document).on( "click", "#updateEmailButton", updateEmailClick);
 		
 }
 
 
 
 
-$(document).on('ready', function() {
+$(document).on('pageinit', function() {
 
 	addHandlers();
 
