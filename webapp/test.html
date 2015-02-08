@@ -1,3 +1,54 @@
-<link rel="stylesheet" type="text/css" href="lib/universal.css" />
+<script>
+ function transcribe(words) {
+  document.getElementById("speech").value = words;
+  document.getElementById("mic").value = "";
+  document.getElementById("speech").focus();
+}
+var recognition = new webkitSpeechRecognition();
 
-<h1>hi</h1>
+
+recognition.lang = "en-GB";
+  recognition.onstart = function() {  alert("Started"); }
+
+  recognition.onerror = function(event) {  alert(event);}
+  recognition.onend = function() {  }
+  
+  recognition.onresult = function(event) {
+	
+	  var r = "";
+	  for (var i = 0; i < event.results.length; i++) {
+		r = event.results[i][0].transcript;
+	
+	  }
+	  alert(r);
+	  
+	  if(r.indexOf("tony") > -1) {
+		window.location.replace("http://www.quickmeme.com/img/78/7824d25cbc4ad26f2efec58090b84bd9a99c544e48a1c76527bb58e5a1052c51.jpg");  
+	  }
+	  
+		 /*var interim_transcript = '';
+
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+      } else {
+        interim_transcript += event.results[i][0].transcript;
+      }
+    }
+    final_transcript = capitalize(final_transcript);
+    alert( linebreak(final_transcript));
+    alert(linebreak(interim_transcript));  */
+   
+  };
+
+  
+  
+    //recognition.start();
+</script>
+
+<body onload="javascript:init();">
+<input x-webkit-speech />
+<textarea cols="50" id="speech"></textarea>
+<input id="mic"
+onwebkitspeechchange="transcribe(this.value)" x-webkit-speech>
+</body>

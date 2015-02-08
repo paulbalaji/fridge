@@ -1,4 +1,4 @@
-<?php include( "includes/meta.php"); ?>
+<?php include( "includes/meta.php"); include("addEmail.php"); ?>
 <!DOCTYPE html>
 <html>
 
@@ -22,21 +22,25 @@
 
         <div data-role="header">
 
-            <h1>Fridge App</h1>
-            <div data-role="navbar">
+            <h1>F.R.I.D.G.E</h1>
+            <!-- Fantastically Reliable Integrated Digital Global Engine
+            	 Global Engine Now Integrating Ur Shopping
+                 Just A Rather Very Intelligent System
+            </!-->
+            <!--div data-role="navbar">
                 <ul>
                     <li><a href="index.php">Home</a>
                     </li>
-                    <li><a href="settings.php">Settings</a>
+                    <!--li><a href="settings.php">Settings</a>
                     </li>
                     <!--<li><a href="changepID.php">Enter PI ID</a>
                     </li> !-->
                     
-                    <li>
+                    <!--li>
                     	<a href="repopulate.php">Repopulate</a>
                     </li>
                 </ul>
-            </div>
+            </div!-->
         </div>
 
         <div data-role="main" class="ui-content">
@@ -44,6 +48,7 @@
            <table>
            <tr>
            <td>
+         
            <input type="hidden" id="pID" value="<?php echo $pID; ?>"  />
            <input type="text" id = "customItemName" /></td>
            <td><a href="#" id="addCustomButton" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
@@ -56,6 +61,13 @@
                 <?php #include( "getList.php"); ?>
                
             </div>
+            
+            
+            <table>
+            <td>     
+            <input type="text" id="email" value="<?php echo $emailID; ?>" placeholder="Email Address" /></td>
+            <td><a href="#" id="updateEmailButton" data-role="button" data-icon="refresh" data-iconpos="notext"></a></td>
+            </table>
         </div>
 
         <div data-role="footer">

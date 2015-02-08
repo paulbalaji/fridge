@@ -7,6 +7,13 @@ var onAddCustom = function() {
 }
 
 
+var updateEmailClick = function() {
+		alert("Email Updated");
+		$.get("updateEmail.php?pID=1&email="+$("#email").val(),function(d){});
+		
+		
+};
+
 
 var onSwipeRight = function () {
 	
@@ -34,17 +41,9 @@ var onSwipeRight = function () {
     	
 	
 }
-function init() {
-  
-
-	
-
-	
-
-
-}
 
 function update() { 
+
   	$.get('getList.php', function (data) {
 
         $("#list").html(data);
@@ -55,19 +54,27 @@ function update() {
 }
 
 function addHandlers() {
+
+	$(document).on( "click", "#addCustomButton", onAddCustom );
+	
+
 	$(document).on( "swiperight", "#list ul li", onSwipeRight );
-		$(document).on( "click", "#addCustomButton", onAddCustom );
+	$(document).on( "click", "#updateEmailButton", updateEmailClick );
+		
+		$('#customItemName').bind('keypress', function(e) {
+ var code = e.keyCode || e.which;
+ if(code == 13) { //Enter keycode
+   onAddCustom()
+ }
+});
 
 }
 
-$(document).on('pageinit', function() {
-	
+
+$(document).on('pagecreate', function() {
 	addHandlers();
 
 	update();
   
   setInterval(update, 1500);
-
-
-
 });

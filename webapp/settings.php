@@ -12,7 +12,8 @@
     
     <link rel="stylesheet" type="text/css" href="lib/universal.css" />
 	<script src="lib/settings.js">
-</script>
+
+	</script>
  
 
 </head>
