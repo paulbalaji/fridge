@@ -25,8 +25,8 @@ def stopCommand():
 
 def playSound(url):
     #subprocess.call(["mpg123", url])
-    thread.start_new_thread(os.system,('omxplayer',url))
-
+    thread.start_new_thread(os.system,('omxplayer ' + url)
+    print("Playing sound..." + url)
     #pygame.mixer.music.load(url)
     #pygame.mixer.music.play(0)
 
