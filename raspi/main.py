@@ -6,8 +6,8 @@ import os
 import subprocess
 import pygame
 import thread
-
-
+import time
+time.sleep(10)
 dbase = db.DB()
 dbase.connect()
 bindings = dbase.getBindings()
@@ -19,25 +19,29 @@ songs = ["song.mp3"]
 
 global player
 
+
+
 print("Running...")
 
 def stopCommand():
-    #pygame.mixer.music.stop();
-    print("stop attempted...")
-    player.stdin.write("q")
+    global player
+    print("Dummy stop command")
+    
+    #print("stop attempted...")
+    #player.stdin.write("q")
 
 def playSound(url):
+    global player
     #subprocess.call(["mpg123", url])
-    player = subprocess.Popen(["omxplayer","song.mp3"], stdin = subprocess.PIPE, stdout.subprocess.PIPE,stderr = subprocess.PIPE)
+    player = subprocess.Popen(["omxplayer","song.mp3"], stdin = subprocess.PIPE, stdout = subprocess.PIPE,stderr = subprocess.PIPE)
     print("Playing sound..." + url)
-    #pygame.mixer.music.load(url)
-    #pygame.mixer.music.play(0)
+   
 
 def playCommand():
-    
-    songs.append(songs[0])
-    playSound(songs[0])
-    songs.pop(0)
+    print("Dummy play command")
+    #songs.append(songs[0])
+    #playSound(songs[0])
+    #songs.pop(0)
 
 while 1:
     char = getch.getch()
@@ -46,8 +50,13 @@ while 1:
     if(char == '+'):
          playCommand()
         
-    elif(char == '-'):
+    elif(char == 'r'):
         stopCommand()
+
+    elif(char == '*'):
+        subprocess.Popen(["python","/home/pi/jasper/jasper.py"], stdin = subprocess.PIPE, stdout = subprocess.PIPE,stderr = subprocess.PIPE)
+        
+
     else:
         try:
             parser = inParser.InputParser(char, bindings)
@@ -60,11 +69,12 @@ while 1:
             if not dbase.checkPresence(itemId):
                 dbase.addToList(itemId)
                 name = names[itemId]
-                text = "%s added to the list." % name
+                text = '%s added to the list.' % name
             else:
-                text = "item is already in the list"
+                text = 'item is already in the list'
             dbase.close()
-            subprocess.call('echo '+text+'|festival --tts', shell=True)
+	    print text
+            subprocess.call('espeak -v en ' + text,shell= True)
         except:
-            raise
+            pass
             print "Press correct button you shithead"
