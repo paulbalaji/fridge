@@ -11,7 +11,13 @@
 
     
     <link rel="stylesheet" type="text/css" href="lib/universal.css" />
-	<script src="lib/settings.js"></script>
+	<script >
+$(document).on('pageinit', function() {
+	alert("fuck");
+
+
+
+});</script>
  
 
 </head>
