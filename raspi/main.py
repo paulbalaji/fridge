@@ -35,7 +35,7 @@ while 1:
         effect = pygame.mixer.Sound('song.mp3')
         effect.play()
 
-    else if(char == '-'):
+    elif(char == '-'):
         killPlayer()
     else:
         try:
