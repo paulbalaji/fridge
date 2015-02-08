@@ -5,6 +5,7 @@ import getch
 import os
 import subprocess
 import pygame
+import MyClass
 
 
 dbase = db.DB()
