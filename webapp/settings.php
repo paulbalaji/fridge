@@ -38,12 +38,14 @@
         
         <div data-role="main" class="ui-content">
             <p>Set Email to send list to</p>
+            <tr>
             <td>
             <div data-role="fieldcontain" class="ui-hide-label">
 	          <label for="username">Username:</label>
           	<input type="text" name="username" id="username" value="" placeholder="Email Address"/>
           	</td>
             <td><a href="#" id="addCustomButton" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
+            </tr>
         	</div>
         </div>
 
