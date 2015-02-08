@@ -39,12 +39,14 @@
         <div data-role="main" class="ui-content">
             
             <p>Email to send list to</p>
-            <tr>
+            <table>
+            
             <td>     
             <input type="text" id="email" value="<?php echo $emailID; ?>" placeholder="Email Address" /></td>
             <td><a href="#" id="addCustomButton" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
-            </tr>
             
+            </table>
+
         <div data-role="footer">
             <h1>End of Page</h1>
         </div>
