@@ -41,8 +41,8 @@
             <div data-role="fieldcontain" class="ui-hide-label">
 	          <label for="username">Username:</label>
           	<input type="text" name="username" id="username" value="" placeholder="Email Address"/>
-            </div>
             <td><a href="#" id="addCustomButton" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
+        	</div>
         </div>
 
         <div data-role="footer">
