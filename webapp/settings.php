@@ -42,7 +42,7 @@
             <table>
             <td>     
             <input type="text" id="email" value="<?php echo $emailID; ?>" placeholder="Email Address" /></td>
-            <td><a href="#" id="addCustomButton" data-role="button" data-icon="refresh" data-iconpos="update"></a></td>
+            <td><a href="#" id="addCustomButton" data-role="button" data-icon="refresh" data-iconpos="notext"></a></td>
             </table>
 
         <div data-role="footer">
