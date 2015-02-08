@@ -1,6 +1,6 @@
 var updateEmailClick = function() {
 	alert("clicked baby");
-		$.get("updateEmail.php?pID=1&email="+$("email").val(),function(d){});
+		$.get("updateEmail.php?pID=1&email="+$("#email").val(),function(d){});
 		
 }
 function addHandlers() {
