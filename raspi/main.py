@@ -6,7 +6,7 @@ import os
 import subprocess
 import pygame
 
-pygame.mixer.pre_init(44100, -16, 2, 2048) # setup mixer to avoid sound lag
+pygame.mixer.init() # setup mixer to avoid sound lag
 pygame.init() 
 dbase = db.DB()
 dbase.connect()
