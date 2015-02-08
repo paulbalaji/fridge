@@ -17,15 +17,18 @@ dbase.close()
 songsOld = ["http://192.168.5.122/fridge/webapp/song.mp3"]
 songs = ["song.mp3"]
 
+global player
+
 print("Running...")
 
 def stopCommand():
     #pygame.mixer.music.stop();
     print("stop attempted...")
+    player.stdin.write("q")
 
 def playSound(url):
     #subprocess.call(["mpg123", url])
-    thread.start_new_thread(os.system,('omxplayer ' + url,))
+    player = subprocess.Popen(["omxplayer","song.mp3"], stdin = subprocess.PIPE, stdout.subprocess.PIPE,stderr = subprocess.PIPE)
     print("Playing sound..." + url)
     #pygame.mixer.music.load(url)
     #pygame.mixer.music.play(0)
