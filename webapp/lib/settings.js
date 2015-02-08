@@ -11,7 +11,7 @@ function addHandlers() {
 
 
 
-$(document).on('pageinit', function() {
+$(document).on('ready', function() {
 
 	addHandlers();
 
