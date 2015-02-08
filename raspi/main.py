@@ -4,14 +4,7 @@ import curses
 import getch
 import os
 import subprocess
-import pyaudio
-import wave
-import sys
-
-CHUNK = 1024
-
-
-
+import pygame
 
 dbase = db.DB()
 dbase.connect()
@@ -19,35 +12,16 @@ bindings = dbase.getBindings()
 names = dbase.getNames()
 dbase.close()
 
-songs = ["http://192.168.5.122/fridge/webapp/song.mp3"]
-
+songsOld = ["http://192.168.5.122/fridge/webapp/song.mp3"]
+songs = ["song.mp3"]
 
 def killPlayer():
-    aubprocess.call(["pkill",  "mpg123"])
+    pygame.mixer.music.stop();
 
 def playSound(url):
     #subprocess.call(["mpg123", url])
-    
-
-    wf = wave.open(url, 'rb')
-
-    p = pyaudio.PyAudio()
-
-    stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
-                channels=wf.getnchannels(),
-                rate=wf.getframerate(),
-                output=True)
-
-    data = wf.readframes(CHUNK)
-
-    while data != '':
-        stream.write(data)
-        data = wf.readframes(CHUNK)
-
-    stream.stop_stream()
-    stream.close()
-
-    p.terminate()
+    pygame.mixer.music.load(url)
+    pygame.mixer.music.play(0)
 
 while 1:
     char = getch.getch()
