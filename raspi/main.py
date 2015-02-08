@@ -32,13 +32,10 @@ while 1:
     print("char is " + char)
     
     if(char == '+'):
-        #songs.append(songs[0])
-        #playSound(songs[0])
-        #songs.pop(0)
-        print("Song kinda playing...")
-        effect = pygame.mixer.Sound('song.mp3')
-        effect.play()
-
+        songs.append(songs[0])
+        playSound(songs[0])
+        songs.pop(0)
+        
     elif(char == '-'):
         killPlayer()
     else:
