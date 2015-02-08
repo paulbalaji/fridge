@@ -35,24 +35,24 @@ while 1:
         effect = pygame.mixer.Sound('song.mp3')
         effect.play()
 
-    if(char == '-'):
+    else if(char == '-'):
         killPlayer()
-    
-    try:
-        parser = inParser.InputParser(char, bindings)
-        
-        itemId = parser.getValue()
-        
-        dbase = db.DB()
-        dbase.connect()
+    else:
+        try:
+            parser = inParser.InputParser(char, bindings)
+            
+            itemId = parser.getValue()
+            
+            dbase = db.DB()
+            dbase.connect()
 
-        if not dbase.checkPresence(itemId):
-            dbase.addToList(itemId)
-            name = names[itemId]
-            text = "%s added to the list." % name
-        else:
-            text = "item is already in the list"
-        dbase.close()
-        subprocess.call('echo '+text+'|festival --tts', shell=True)
-    except:
-        print "Press correct button you shithead"
+            if not dbase.checkPresence(itemId):
+                dbase.addToList(itemId)
+                name = names[itemId]
+                text = "%s added to the list." % name
+            else:
+                text = "item is already in the list"
+            dbase.close()
+            subprocess.call('echo '+text+'|festival --tts', shell=True)
+        except:
+            print "Press correct button you shithead"
