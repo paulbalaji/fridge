@@ -39,9 +39,7 @@
         <div data-role="main" class="ui-content">
             
             <table>
-            <td>
-            <p>Email to send list to</p></td>
-            <td>     
+            <p>Email list to: </p></td>     
             <input type="text" id="email" value="<?php echo $emailID; ?>" placeholder="Email Address" /></td>
             <td><a href="#" id="addCustomButton" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
             </table>
