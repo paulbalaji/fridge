@@ -23,7 +23,7 @@ def stopCommand():
 
 def playSound(url):
     #subprocess.call(["mpg123", url])
-    myClass = MyClass(url)
+    myClass = MyClass()
     myClass.start()
     myClass.join()
     #pygame.mixer.music.load(url)
