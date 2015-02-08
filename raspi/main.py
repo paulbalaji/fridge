@@ -15,16 +15,23 @@ dbase.close()
 songs = ["http://192.168.5.122/fridge/webapp/song.mp3"]
 
 
+def killPlayer():
+    aubprocess.call(["pkill",  "mpg123"])
+
 def playSound(url):
      subprocess.call(["mpg123", url]) 
 
 while 1:
     char = getch.getch()
     print("char is " + char)
+    
     if(char == '+'):
         songs.append(songs[0])
         playSound(songs[0])
         songs.pop(0)
+
+    if(char == '-'):
+        killPlayer()
     
     try:
         parser = inParser.InputParser(char, bindings)
