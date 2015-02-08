@@ -41,7 +41,6 @@
             <table>
            <tr>
            <td>
-           <input type="hidden" id="pID" value="<?php echo $pID; ?>"  />
            <input type="text" id = "customItemName" /></td>
            <td><a href="#" id="addCustomButton" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
            </tr>
