@@ -1,4 +1,4 @@
-<?php include( "includes/meta.php"); ?>
+<?php include( "includes/addEmail.php"); ?>
 <!DOCTYPE html>
 <html>
 
@@ -37,14 +37,17 @@
 	
         
         <div data-role="main" class="ui-content">
+            <p>Current Email</p>
+            <input type="hidden" id="email" value="<?php echo $emailID; ?>"  />
+            
             <p>Set Email to send list to</p>
             <table>
-           <tr>
-           <td>
-           <input type="text" id = "customItemName" /></td>
-           <td><a href="#" id="addCustomButton" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
-           </tr>
-           </table>
+            <tr>
+            <td>     
+            <input type="text" id = "email" /></td>
+            <td><a href="#" id="addCustomButton" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
+            </tr>
+            </table>
 
         <div data-role="footer">
             <h1>End of Page</h1>
