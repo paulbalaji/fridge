@@ -20,6 +20,7 @@ print("Running...")
 
 def stopCommand():
     #pygame.mixer.music.stop();
+    print("stop attempted...")
 
 def playSound(url):
     #subprocess.call(["mpg123", url])
