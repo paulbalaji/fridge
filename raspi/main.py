@@ -16,6 +16,8 @@ dbase.close()
 songsOld = ["http://192.168.5.122/fridge/webapp/song.mp3"]
 songs = ["song.mp3"]
 
+print("Running...")
+
 def killPlayer():
     pygame.mixer.music.stop();
 
