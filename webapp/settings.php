@@ -42,7 +42,7 @@
             <p>Email to send list to:</p>
             <table>
             <td>     
-            <input type="text" id="emailF" value="<?php echo $emailID; ?>" placeholder="Email Address" /></td>
+            <input type="text" id="email" value="<?php echo $emailID; ?>" placeholder="Email Address" /></td>
             <td><a href="#" id="updateEmailButton" data-role="button" data-icon="refresh" data-iconpos="notext"></a></td>
             </table>
 
