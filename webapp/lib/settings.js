@@ -1,10 +1,12 @@
-function addHandlers() {
-	$("#updateEmailButton").click(  function(){
-		alert("hi..");
-		$.get("updateEmail.php?pID=1&email="+$("email").val(),function(d){});
+var updateEmailClick = function() {
+
+		$.get("updateEmail.php?pID=1&email="+$("emailF").val(),function(d){});
 		});
+}
+function addHandlers() {u
+	$(document).on( "click", "#updateEmailButton", updateEmailClick );
 		
-		}
+}
 
 
 
