@@ -42,10 +42,6 @@
 	          <label for="username">Username:</label>
           	<input type="text" name="username" id="username" value="" placeholder="Email Address"/>
             </div>
-
-            <div id="list">
-                
-            </div>
         </div>
 
         <div data-role="footer">
