@@ -35,6 +35,7 @@ while 1:
         #songs.append(songs[0])
         #playSound(songs[0])
         #songs.pop(0)
+        print("Song kinda playing...")
         effect = pygame.mixer.Sound('song.mp3')
         effect.play()
 
