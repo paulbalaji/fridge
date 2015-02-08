@@ -9,9 +9,10 @@
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-    <script src="lib/home.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="lib/universal.css" />
-
+	<script src="lib/settings.js">
+</script>
  
 
 </head>
@@ -38,11 +39,11 @@
         
         <div data-role="main" class="ui-content">
             
-            <p>Email to send list to</p>
+            <p>Email to send list to:</p>
             <table>
             <td>     
             <input type="text" id="email" value="<?php echo $emailID; ?>" placeholder="Email Address" /></td>
-            <td><a href="#" id="addCustomButton" data-role="button" data-icon="refresh" data-iconpos="notext"></a></td>
+            <td><a href="#" id="updateEmailButton" data-role="button" data-icon="refresh" data-iconpos="notext"></a></td>
             </table>
 
         <div data-role="footer">
