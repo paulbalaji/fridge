@@ -37,10 +37,10 @@
 	
         
         <div data-role="main" class="ui-content">
-            <p>Settings</p>
+            <p>Set Email to send list to</p>
             <div data-role="fieldcontain" class="ui-hide-label">
 	          <label for="username">Username:</label>
-          	<input type="text" name="username" id="username" value="" placeholder="Username"/>
+          	<input type="text" name="username" id="username" value="" placeholder="Email Address"/>
             </div>
 
             <div id="list">
