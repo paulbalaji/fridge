@@ -19,7 +19,7 @@ songs = ["song.mp3"]
 
 print("Running...")
 
-def killPlayer():
+def stopMusic():
     pygame.mixer.music.stop();
 
 def playSound(url):
@@ -37,7 +37,7 @@ while 1:
         songs.pop(0)
         
     elif(char == '-'):
-        killPlayer()
+        stopMusic()
     else:
         try:
             parser = inParser.InputParser(char, bindings)
