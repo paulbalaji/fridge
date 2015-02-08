@@ -37,14 +37,12 @@
 	
         
         <div data-role="main" class="ui-content">
-            <p>Current Email</p>
-            <input type="text" id="email" value="<?php echo $emailID; ?>" placeholder="Email Address" />
             
-            <p>Set Email to send list to</p>
+            <p>Email to send list to</p>
             <table>
             <tr>
             <td>     
-            <input type="text" id = "email" /></td>
+            <input type="text" id="email" value="<?php echo $emailID; ?>" placeholder="Email Address" /></td>
             <td><a href="#" id="addCustomButton" data-role="button" data-icon="plus" data-iconpos="notext"></a></td>
             </tr>
             </table>
