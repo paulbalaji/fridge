@@ -5,7 +5,7 @@ import getch
 import os
 import subprocess
 import pygame
-import MyClass
+import thread
 
 
 dbase = db.DB()
@@ -25,9 +25,8 @@ def stopCommand():
 
 def playSound(url):
     #subprocess.call(["mpg123", url])
-    myClass = MyClass()
-    myClass.start()
-    myClass.join()
+    thread.start_new_thread(os.system,('omxplayer',url))
+
     #pygame.mixer.music.load(url)
     #pygame.mixer.music.play(0)
 
