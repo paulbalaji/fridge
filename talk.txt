@@ -1,0 +1,46 @@
+-opened your fridge?
+-missing food?
+-OR MAYBE
+-forgot to buy something at the shop?
+-We have a solution!
+
+-pyFridge
+-revolutionary keypad technology
+-automatically adds items to a shopping list
+
+-can access this from your phone!
+
+[remove phone from pocket & show list]
+[show swipe to remove feature]
+[show "no" to duplicate feature]
+
+-add miscellaneous items through web app
+
+[show "{X}" added to list]
+
+-it can be used as a normal shopping list
+-pre-alpha users can get access
+-to send this list to others
+
+-so now, come home
+-have food, be happy and cook!
+
+...
+
+-ONE MORE THING
+-but wait, there's more!
+
+-suppose
+-hands dirty when you're cooking
+
+-we can provide first class entertainment
+-all through the power of nature's Standard Out
+
+[FRIDGE, PLAY]
+
+[FRIDGE, STOP]
+
+[FRIDGE, EXIT]
+
+where EXIT
+    = Thank You for listening!
