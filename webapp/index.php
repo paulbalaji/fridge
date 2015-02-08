@@ -22,7 +22,7 @@
 
         <div data-role="header">
 
-            <h1>F.R.I.D.G.E</h1>
+            <h1>Fantastically Reliable Integrated Digital Global Engine</h1>
             <!-- Fantastically Reliable Integrated Digital Global Engine
             	 Global Engine Now Integrating Ur Shopping
                  Just A Rather Very Intelligent System
